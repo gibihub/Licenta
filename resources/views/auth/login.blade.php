@@ -62,7 +62,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="widget">
                             <h6 class="title">Recent Posts</h6>
-                            <hr>
+                            <hr> s
                             <ul class="link-list recent-posts">
                                 <li>
                                     <a href="#">Hugging pugs is super trendy</a>

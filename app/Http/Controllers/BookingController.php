@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Booking;
+
 class BookingController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        return Bookings::all();
+        return view('bookings.index');
     }
 
     /**

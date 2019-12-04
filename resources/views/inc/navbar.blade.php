@@ -44,6 +44,11 @@
                                 @lang('navbar.register')
                             </a>
                         </li>
+                        <li>
+                                <a href="{{url('/bookings')}}">
+                                    @lang('navbar.bookings')
+                                </a>
+                            </li>
                         @endauth
                     </ul>
                 </div>

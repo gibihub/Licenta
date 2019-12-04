@@ -6,5 +6,5 @@ return [
     'login' => 'Autentificare',
     'register' => 'Înregistrare',
     'type here' => "Caută aici",
-
+    'bookings' => "Rezervări",
 ];

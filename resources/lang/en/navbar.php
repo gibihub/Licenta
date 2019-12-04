@@ -6,5 +6,5 @@ return [
     'login' => 'Login',
     'register' => 'Register',
     'type here' => "Type here",
-
+    'bookings' => 'Bookings',
 ];

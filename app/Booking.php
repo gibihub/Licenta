@@ -9,7 +9,7 @@ class Booking extends Model
     //Table Name
     protected $table = 'bookings';
     // Primary Key
-    public $primaryKey = 'booking_id';
+    public $primaryKey = 'id';
     //Timestamps
     public $timestamps = true;
 }

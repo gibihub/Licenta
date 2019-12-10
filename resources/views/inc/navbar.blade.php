@@ -4,7 +4,7 @@
         <div class="nav-bar">
             <div class="module left">
                 <a href='/'>
-                    <img  class="logo logo-light" alt="Foundry" src="{{asset('storage/img/logo-light.png')}}" />
+                    <img class="logo logo-light" alt="Foundry" src="{{asset('storage/img/logo-light.png')}}" />
                     <img class="logo logo-dark" alt="Foundry" src="{{asset('storage/img/logo-light.png')}}" />
                 </a>
             </div>
@@ -26,12 +26,12 @@
                             </a>
                         </li>
                         <li>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button type="submit" name="logout" class="no-style">
-                                        {{ __('welcome.logout')}}
-                                    </button>
-                                </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" name="logout" class="no-style">
+                                    {{ __('welcome.logout')}}
+                                </button>
+                            </form>
                         </li>
                         @else
                         <li>
@@ -45,10 +45,10 @@
                             </a>
                         </li>
                         <li>
-                                <a href="{{url('/bookings')}}">
-                                    @lang('navbar.bookings')
-                                </a>
-                            </li>
+                            <a href="{{url('/bookings')}}">
+                                @lang('navbar.bookings')
+                            </a>
+                        </li>
                         @endauth
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="function">
                         <form class="search-form">
-                                <input type="text" placeholder="@lang('navbar.type here')" />
+                            <input type="text" placeholder="@lang('navbar.type here')" />
                         </form>
                     </div>
                 </div>

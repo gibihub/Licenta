@@ -23,6 +23,6 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashBoardController@index');
 
 Route::resource('bookings' , 'BookingController');

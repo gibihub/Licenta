@@ -6,7 +6,8 @@ return [
     "submit" => "Submit",
     "create" => "Create new booking",
     "edit" => "Edit",
-    "delete" => "Delete"
+    "delete" => "Delete",
+    "blog" => "Your bookings"
 
 
 

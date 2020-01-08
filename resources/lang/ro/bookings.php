@@ -6,7 +6,8 @@ return [
     "submit" => "Aplica",
     "create" => "Creeaza booking nou",
     "edit" => "Editeaza",
-    "delete" => "Sterge Booking"
+    "delete" => "Sterge Booking",
+    "blog" => "Booking-urile dumneavoastra"
 
 
 

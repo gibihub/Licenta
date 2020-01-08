@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Booking;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $user_id = Auth::User()->id;
+        $bookings = Booking::find($user_id)->paginate(5);
+        return view('dashboard')->with('bookings', $bookings);
     }
 }

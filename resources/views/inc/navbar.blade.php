@@ -15,7 +15,7 @@
                 <div class="module left">
                     <ul class="menu">
                         <li>
-                            <a href="#">
+                            <a href="{{url('/')}}">
                                 @lang('navbar.home')
                             </a>
                         </li>
@@ -78,6 +78,9 @@
                                 @endforeach
                             </ul>
                         </li>
+                    </ul>
+                    <ul class="menu">
+                        <li><a href ="{{url('/bookings/create')}}">@lang('bookings.create')</a></li>
                     </ul>
                 </div>
             </div>

@@ -27,7 +27,8 @@
     <div id="app">
         @include('inc.navbar')
 
-        <main >
+        <main>
+            @include('inc.messages')
             @yield('content')
         </main>
 

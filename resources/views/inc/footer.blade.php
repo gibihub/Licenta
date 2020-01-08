@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6">
-                <img alt="Logo" class="logo" src="{{asset('storage/img/logo-light.png')}}" />
+                <img alt="Logo" src="{{asset('storage/img/logo-light.png')}}" />
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="widget">

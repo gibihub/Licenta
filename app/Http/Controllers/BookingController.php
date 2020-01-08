@@ -15,7 +15,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
+        //$bookings = Booking::orderBy('title', 'desc')->get();
+        $bookings = Booking::orderBy('created_at', 'desc')->paginate(5);
         return view('bookings.index')->with('bookings', $bookings);
     }
 
@@ -26,7 +27,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return view('bookings.create');
     }
 
     /**
@@ -37,7 +38,20 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nume' => 'required',
+            'body' => 'required'
+        ]);
+       
+        
+        // Create Booking
+
+        $booking = new Booking;
+        $booking->title = $request->input('nume');
+        $booking->body = $request->input('body');
+        $booking->save();
+
+        return redirect('/bookings')->with('success', 'Booking Created');
     }
 
     /**
@@ -48,7 +62,7 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        return Booking::find($id);
+        $booking = Booking::find($id);
         return view('bookings.show')->with('booking' , $booking);
     }
 
@@ -60,7 +74,8 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $booking = Booking::find($id);
+        return view('bookings.edit')->with('booking' , $booking);
     }
 
     /**
@@ -72,7 +87,20 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nume' => 'required',
+            'body' => 'required'
+        ]);
+       
+        
+        // Create Booking
+
+        $booking = Booking::find($id) ;
+        $booking->title = $request->input('nume');
+        $booking->body = $request->input('body');
+        $booking->save();
+
+        return redirect('/bookings')->with('success', 'Boooking Updated');
     }
 
     /**
@@ -83,6 +111,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking->delete();
+        return redirect('/bookings')->with('success', 'Booking Deleted');
     }
 }

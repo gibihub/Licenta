@@ -27,10 +27,20 @@
         </div>
     </section>
     <div class="container py-4">
+        <a href="/bookings" class="btn btn-default"> Go Back </a>
         <h1>{{$booking->title}}</h1>
-        
+        <div>
+            {{$booking->body}}
+        </div>
+        <hr>
+        <small> Written on {{$booking->created_at}}</small>
+        <a href="/bookings/{{$booking->id}}/edit" class="btn btn-default">@lang('bookings.edit')</a>
+
+        <form method="post" action="{{ route('bookings.destroy', $booking->id) }}" class="pull-right">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">@lang('bookings.delete')</button>
+        </form>
     </div>
-
-
 </div>
 @endsection

@@ -31,7 +31,7 @@
         @foreach($bookings as $booking)
         <div class="well">
             <h3><a href="/bookings/{{$booking->id}}">{{$booking->title}}</a></h3>
-            <small>Written on {{$booking->created_at}}</small>
+            <small>Written on {{$booking->created_at}} by {{$booking->user->name}}</small>
         </div>
         @endforeach
         {{$bookings->links()}}

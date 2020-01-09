@@ -14,8 +14,8 @@
                         </div>
                     @endif
                         <a href="/bookings/create" class="btn btn-primary ">@lang('bookings.create')</a>
-                        <h3>Your Blog bookings</h3>
-                        @if(count($bookings)>0)
+                        <h3>Your bookings</h3>
+                        @if(is_array($bookings) && count($bookings)>0)
                         <table class="table table-striped">
                             <tr>
                                 <th>Title</th>

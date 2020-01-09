@@ -33,7 +33,9 @@
             {{$booking->body}}
         </div>
         <hr>
-        <small> Written on {{$booking->created_at}}</small>
+        <small> Written on {{$booking->created_at}} by {{$booking->user->name}}</small>
+        @if(!Auth::guest())
+        @if(Auth::user()->id == $booking->user_id)
         <a href="/bookings/{{$booking->id}}/edit" class="btn btn-default">@lang('bookings.edit')</a>
 
         <form method="post" action="{{ route('bookings.destroy', $booking->id) }}" class="pull-right">
@@ -41,6 +43,8 @@
             @csrf
             <button type="submit" class="btn btn-danger">@lang('bookings.delete')</button>
         </form>
+        @endif
+        @endif
     </div>
 </div>
 @endsection

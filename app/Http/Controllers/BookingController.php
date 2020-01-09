@@ -8,6 +8,16 @@ use App\Booking;
 
 class BookingController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -49,6 +59,7 @@ class BookingController extends Controller
         $booking = new Booking;
         $booking->title = $request->input('nume');
         $booking->body = $request->input('body');
+        $booking->user_id = auth()->user()->id;
         $booking->save();
 
         return redirect('/bookings')->with('success', 'Booking Created');
@@ -73,8 +84,14 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+
         $booking = Booking::find($id);
+        
+          
+        if(auth()->user()->id !==$booking->user_id){
+            return redirect('/bookings')->with('error', 'Unauthorized Page');
+        }
         return view('bookings.edit')->with('booking' , $booking);
     }
 
@@ -110,8 +127,14 @@ class BookingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    { 
+
         $booking = Booking::find($id);
+          
+        if(auth()->user()->id !==$booking->user_id){
+            return redirect('/bookings')->with('error', 'Unauthorized Page');
+        }
+
         $booking->delete();
         return redirect('/bookings')->with('success', 'Booking Deleted');
     }

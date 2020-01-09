@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Booking;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -26,7 +27,7 @@ class DashboardController extends Controller
     public function index()
     {
         $user_id = Auth::User()->id;
-        $bookings = Booking::find($user_id)->paginate(5);
-        return view('dashboard')->with('bookings', $bookings);
+        $user = User::find($user_id);
+        return view('dashboard')->with('bookings', $user->bookings);
     }
 }

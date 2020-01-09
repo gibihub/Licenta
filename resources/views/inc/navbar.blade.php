@@ -26,6 +26,14 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{url('/bookings')}}">
+                                @lang('navbar.bookings')
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dashboard">@lang('bookings.dashboard')</a>
+                        </li>
+                        <li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" name="logout" class="no-style">

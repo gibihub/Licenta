@@ -7,4 +7,5 @@ return [
     'register' => 'Înregistrare',
     'type here' => "Caută aici",
     'bookings' => "Rezervări",
+    'search' => 'Cautare'
 ];

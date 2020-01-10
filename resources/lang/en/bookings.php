@@ -8,7 +8,11 @@ return [
     "edit" => "Edit",
     "delete" => "Delete",
     "blog" => "Your bookings",
-    "dashboard" => "Dashboard"
+    "dashboard" => "Dashboard",
+    "written on" => "Written On",
+    "by" => "By",
+    "NoFoundBookings" => "No bookings found",
+    "Go Back" => "Go Back"
 
 
 

@@ -25,7 +25,7 @@
                                 {{Auth::User()->name}}
                             </a>
                         </li>
-                        <li>
+                         <li>
                             <a href="{{url('/bookings')}}">
                                 @lang('navbar.bookings')
                             </a>
@@ -64,7 +64,7 @@
                 <div class="module widget-handle search-widget-handle left">
                     <div class="search">
                         <i class="ti-search"></i>
-                        <span class="title">Search Site</span>
+                        <span class="title">@lang('navbar.search')</span>
                     </div>
                     <div class="function">
                         <form class="search-form">
@@ -86,11 +86,12 @@
                                 @endforeach
                             </ul>
                         </li>
-                    </ul>
-                    <ul class="menu">
-                        <li><a href ="{{url('/bookings/create')}}">@lang('bookings.create')</a></li>
+                        <ul class="menu">
+                            <li><a href ="{{url('/bookings/create')}}">@lang('bookings.create')</a></li>
+                        </ul>
                     </ul>
                 </div>
+
             </div>
             <!--end of module group-->
         </div>

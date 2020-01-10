@@ -7,4 +7,5 @@ return [
     'register' => 'Register',
     'type here' => "Type here",
     'bookings' => 'Bookings',
+    'search' => 'Search'
 ];

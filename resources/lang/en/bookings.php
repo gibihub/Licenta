@@ -12,7 +12,8 @@ return [
     "written on" => "Written On",
     "by" => "By",
     "NoFoundBookings" => "No bookings found",
-    "Go Back" => "Go Back"
+    "Go Back" => "Go Back",
+    "incarca" => "Upload image"
 
 
 

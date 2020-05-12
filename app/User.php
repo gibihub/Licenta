@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function posts(){
-        return $this->hasmany('App\Booking');
+        return $this->hasMany('App\Booking');
         
     }
 }

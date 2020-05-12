@@ -26,7 +26,7 @@ class BookingController extends Controller
     public function index()
     {
         //$bookings = Booking::orderBy('title', 'desc')->get();
-        $bookings = Booking::orderBy('created_at', 'desc')->paginate(5);
+        $bookings = Booking::orderBy('created_at', 'desc')->paginate(10);
         return view('bookings.index')->with('bookings', $bookings);
     }
 
@@ -50,15 +50,28 @@ class BookingController extends Controller
     {
         $this->validate($request, [
             'nume' => 'required',
-            'body' => 'required'
+            'description' => 'required'
         ]);
+
+        $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $extension = $request->file('cover_image')->getClientOriginalExtension();
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;
+        $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+
+        
        
         
         // Create Booking
 
         $booking = new Booking;
+        $booking->stars = 0;
+        $booking->rating = 0;
+        $booking->price = $request->input('price');
         $booking->title = $request->input('nume');
-        $booking->body = $request->input('body');
+        $booking->description = $request->input('description');
+        $booking->cover_image = $fileNameToStore;
+        //return $request->input('description');
         $booking->user_id = auth()->user()->id;
         $booking->save();
 

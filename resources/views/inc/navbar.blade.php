@@ -85,10 +85,7 @@
                                 @endif
                                 @endforeach
                             </ul>
-                        </li>
-                        <ul class="menu">
-                            <li><a href ="{{url('/bookings/create')}}">@lang('bookings.create')</a></li>
-                        </ul>
+                        </li>                    
                     </ul>
                 </div>
 

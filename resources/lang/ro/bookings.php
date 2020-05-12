@@ -8,11 +8,12 @@ return [
     "edit" => "Editeaza",
     "delete" => "Sterge Booking",
     "blog" => "Booking-urile dumneavoastra",
-    "dashboard" => "PaginaDumneavoastra",
+    "dashboard" => "Panou",
     "written on" => "Scris la",
     "by" => "By",
     "NoFoundBookings" => "Niciun booking gasit",
-    "Go Back" => "Inapoi"
+    "Go Back" => "Inapoi",
+    "incarca" => "Incarca imagine"
 
 
 

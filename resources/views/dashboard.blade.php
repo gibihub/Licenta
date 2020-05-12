@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<section class="page-title page-title-2 image-bg overlay parallax">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="{{asset('storage/img/cover15.jpg')}}">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="uppercase mb8">Dashboard</h2>
+                <p class="lead mb0">Pagina de administrare</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
 <div class="container">
+    
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
